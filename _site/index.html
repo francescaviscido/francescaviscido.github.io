@@ -13,20 +13,51 @@
 	<link rel="stylesheet" href="/assets/css/main.css" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
+
+<script>
+	var current = 0;
+
+	$(document).ready(function() {
+		$("#c1").hide();
+	});
+	function change(current, todisplay) {
+
+		$("#c"+current).fadeOut(0);
+		$("#c"+todisplay).fadeIn(2000);  
+		current = todisplay;
+	}
+</script>
 <body>
     
 <!-- Header -->
 <header id="header">
-	<h1>Benvenuto</h1>
-	<h3><i>Mi chiamo Francesca Viscido e sono Psicologa e Psicoterapeuta cognitivo-comportamentale</i></h3>
-	<p>
-		Se sei arrivato fino a qui hai un ragione per fare il prossimo passo ...
-		<br>
-		Puoi smettere oggi stesso di cercare da solo una soluzione
-	</p>
-	<a href="/home">Scopriamolo insime</a>
+	<div id="c0">
+		<h1>Benvenuto</h1>
+		
+		<p>Se sei arrivato fino a qui hai un ragione per fare il prossimo passo ...</p>
+		<p>Puoi smettere oggi stesso di cercare una soluzione da solo</p>
+		
+		<a onclick="change(current, 1);">Scopriamolo insieme</a>
+	</div>
+	<div id="c1">
+		<h1>Chi sono?</h1>
+		<h3><i>Mi chiamo Francesca Viscido e sono Psicologa e Psicoterapeuta</i></h3>
+		<h4>Specialista in pscicoterapia cognitivo-comportamentale per il</h4>
+		<ul>
+			<li>Disturbo d'ansia</li>
+			<li>Attacchi di panico</li>
+			<li>Fobie</li>
+			<li>Disturbo ossessivo-compulsivo</li>
+			<li>Stress post-traumatico (trauma emotivo e fisico/sessuale)</li>
+			<li>Depressione</li>
+			<li>Disturbi dell'alimentazione, del sonno, e dipendenze</li>
+		  </ul>
+		
+		<a href="/home">Ma cosa significa indirizzo cognitivo-comportamentale?</a>
+	</div>	
 </header>
 
 <!-- Signup Form
