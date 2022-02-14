@@ -1,0 +1,20 @@
+# Site settings
+title: francescaviscido.github.io
+email: dr.ssafrancescaviscido@gmail.com
+description: my personal home page
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Social settings
+500px_url:
+facebook_url:
+github_url:
+gitlab_url:
+googleplus_url:
+instagram_url:
+linkedin_url: https://www.linkedin.com/in/andrew-banchich-a4ba1195
+pinterest_url:
+slack_url:
+twitter_url:
+# Build settings
+markdown: kramdown
