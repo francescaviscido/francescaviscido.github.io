@@ -1,10 +1,10 @@
 ---
 layout: null
-title: Jekyll Theme - Home Page - Massively
-description: Every great website starts with a great homepage. The homepage tells your viewers what your site is all about and gives your viewers a place to come back to.
+title: francescaviscido.github.io - Home Page 
+description: Pagina personale della Dott.ssa Francesca Viscido
 sitemap:
     priority: 1.0
-    lastmod: 2017-11-02
+    lastmod: 2022-05-13
     changefreq: weekly
 ---
 <!DOCTYPE HTML>
@@ -16,7 +16,20 @@ sitemap:
 -->
 <html>
 	<head>
-    {% include head.html %}
+	<!-- Scripts -->
+	{% include scripts-main.html %}
+    {% include tracking.html %}
+	{% include head.html %}
+	<script>
+		function scrollToAnchor(selector){
+  			const destination = $("#"+selector);
+			$('html,body').animate({
+			   scrollTop: destination.offset().top
+			},'slow');
+		}
+	</script>
+    
+	
 
 
 	</head>
@@ -24,18 +37,60 @@ sitemap:
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
+			
 
 				<!-- Intro -->
 					<div id="intro">
-            <h1>{{site.title}}</h1>
-						<h2>The Jekyll Theme Version</h2>
-						<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
-						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>
+            			<h1>{{site.title}}</h1>
+						<h2>Psicologa e pscicoterapeuta</h2>
+					<!--	<p> Benvenuto! </p>-->
+						<div id="stepone" style="margin-bottom: 40px;"> </div>
+						<!--<img id="foot" style="width:50px; opacity: 0.0; margin-bottom: 20px;" src="{{ "/images/footprint.png" | absolute_url }}" alt="" />
+						-->
 						<ul class="actions">
 							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
+				
+					<script>
+					
+						var app = document.getElementById('stepone');
+	
+						var typewriter = new Typewriter(app, {
+							loop: false
+						});
+	
+						typewriter.typeString('Benvenuto! Nella mia pagina personale.')
+							.pauseFor(1000)
+							.deleteAll()
+						    .typeString('Arrivando fino a qui!  ')
+							.pauseFor(400)
+							.typeString('Hai fatto il primo passo ...')
+							.pauseFor(1500)
+							.deleteAll()
+							.typeString('Quindi è arrivato il momento di andare avanti e fare il secondo passo.')
+							.start();
+							/*function doSomething() {
+								
+								if ($('#stepone').html().includes("secondo.")){
+									$('#foot').css('opacity', 1.0);
+									return;
+								}
 
+								if($('#foot').css('opacity') == 0.0){
+									$('#foot').css('opacity', 1.0);
+									//$('#foot').fadeIn();
+								} else{
+									//$('#foot').fadeOut();
+									$('#foot').css('opacity', 0.0);
+								}
+								setTimeout(doSomething, 800);
+								
+							}
+
+							setTimeout(doSomething, 4500);*/
+						
+					</script>
 				<!-- Header -->
 					<header id="header">
 						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
@@ -53,20 +108,23 @@ sitemap:
 						<!-- Featured Post -->
 							<article class="post featured">
 								<header class="major">
-									<h2><a href="#">Massively is a versatile Jekyll theme</a></h2>
-									<p>With only a few edits, you can have a stunningly beautiful website <br />
-                    nearly out of the box. Of course... you can always take it further <br />
-                    and make it something even more amazing!</p>
+									
+									<h2 >Possiamo scoprire insieme la tua prossima scelta!</h2>
+									<br>
+									<span style="font-style: italic;">Il mio metodo si basa sull'empatia tra paziente e terapeuta.</span>
+									
+									<br>
+									Scopri nella sezione <a href="/chisono">Chi Sono</a> il mio cammino professionale.
+								
 								</header>
-								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></a>
-                <p>Regardless of your website's function, the homepage is what brings the user in.
-                  If it's anything short of intriguing, captivating, or just plain cool, you're out of luck and you might deter some visitors.</p>
-                <p>Your homepage must clearly describe what your site is about.
-									Having engaging content will in this manner enable you to offer and it will make your customers more inclined to purchase from you. Content is a way to position your organization in the correct place for your clients to discover you.
-								</p>
-								<p>
-									In this manner, content in itself is a standout amongst the best promoting apparatuses in your whole advertising toolbox! Rather than making your content around your promoting technique, it's limitlessly more productive to fabricate your showcasing around your content.
-								 </p>
+								<a href="#" class="image main"><img src="{{ "/images/bg03.jpg" | absolute_url }}" alt="" /></a>
+								<h3>In breve su di me</h3>
+								<p>Sono una psicologa e pscicoterapeuta ad orientamento <a href="">Cognitivo Comportamentale</a>, esperta nel 
+				trattamento del disturbo d'ansia, .......</p>
+                <p>Mi occupo di terapia individuale, di coppia, e familiare. Ricevo presso la città di Avellino, ne pressi della 
+					clinica Malzoni, viale Platani, e nella città di Battipaglia. Inoltre, è possibile richiedere 
+				sessioni di terapia online.</p>
+			 	<button onclick="scrollToAnchor('footer')" type="button" >Richiedi un appuntamento</button>
 
 							</article>
 
@@ -82,7 +140,7 @@ sitemap:
   									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
   									<p>{{ post.excerpt }}</p>
   									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+  										<li><a href="{{ post.url | absolute_url }}" class="button">leggi l'articolo</a></li>
   									</ul>
   								</article>
                   {% if mod3 == 0 %}
@@ -97,13 +155,13 @@ sitemap:
 
 							</section>
 
-						<!-- Footer -->
+						<!-- 
 							<footer>
                 <ul class="actions">
                   <li><a href="{{ "/blog/" | absolute_url }}" class="button">Our Blog</a></li>
                 </ul>
 							</footer>
-
+Footer -->
 					</div>
 
 				<!-- Footer -->
@@ -111,9 +169,7 @@ sitemap:
 
 			</div>
 
-		<!-- Scripts -->
-		{% include scripts-main.html %}
-    {% include tracking.html %}
+		
 
 	</body>
 </html>
