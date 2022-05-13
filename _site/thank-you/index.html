@@ -143,6 +143,14 @@
 <script src="/assets/js/util.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/typewriter.js"></script>
+<script>
+    function scrollToAnchor(selector){
+          const destination = $("#"+selector);
+        $('html,body').animate({
+           scrollTop: destination.offset().top
+        },'slow');
+    }
+</script>
 			<script async src="https://www.googletagmanager.com/gtag/js?id=default"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

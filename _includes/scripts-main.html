@@ -6,3 +6,11 @@
 <script src="{{ "/assets/js/util.js" | absolute_url }}"></script>
 <script src="{{ "/assets/js/main.js" | absolute_url }}"></script>
 <script src="{{ "/assets/js/typewriter.js" | absolute_url }}"></script>
+<script>
+    function scrollToAnchor(selector){
+          const destination = $("#"+selector);
+        $('html,body').animate({
+           scrollTop: destination.offset().top
+        },'slow');
+    }
+</script>
