@@ -30,14 +30,19 @@ Ad esempio, se ho pensieri irrazionali sul portare a termine un compito, questo 
 - _Pensiero_: "Devo fare tutto bene"
 - _Emozione_: “Mi sento sopraffatto, sotto pressione e mi vergogno”
 - _Comportamento_: procrastinazione
+  
 ---------------------------
 - _Pensiero_: "Se non è fatto alla perfezione, non ha senso provare"
 - _Emozione_: "Mi sento impotente, inutile e non abbastanza bene"
 - _Comportamento_: procrastinazione
+
+
 ----------------------------
 - _Pensiero_: "Qual è il punto"
 - _Emozione_: “Mi sento autorizzato e come se questi compiti non contano”
 - _Comportamento_: procrastinazione
+
+
 --------------------------------
 - _Pensiero_: “Dovrei essere in grado di fare tutto facilmente e senza sforzo. Ci vuole troppo tempo"
 - _Emozione_: “Mi sento ansioso, imbarazzato e stressato”
