@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "La Psicoterapia Cognitivo Comportamentale"
-date:   2022-05-01
+date:   2022-04-01
 excerpt: "Conosciamo insieme il mio orientamento terapeutico"
 image: "/images/bg04.jpg"
 ---
