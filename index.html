@@ -118,8 +118,9 @@ sitemap:
 
 						<!-- Posts -->
 							<section class="posts">
-                {% for post in site.posts limit:3 %}
-                {% assign mod3 = forloop.index | modulo: 3 %}
+								<h3>Articoli recenti del mio blog</h3>
+                {% for post in site.posts limit:2 %}
+                <!-- {% assign mod3 = forloop.index | modulo: 3 %} -->
   								<article>
   									<header>
   										<span class="date">{{ post.date | date_to_string }}</span>
@@ -131,14 +132,14 @@ sitemap:
   										<li><a href="{{ post.url | absolute_url }}" class="button">leggi l'articolo</a></li>
   									</ul>
   								</article>
-                  {% if mod3 == 0 %}
+                  <!-- {% if mod3 == 0 %}
                   <article>
   									<header>
   										<h2><a href="#">Sponsored</a></h2>
   									</header>
 
   								</article>
-                  {% endif %}
+                  {% endif %} -->
                 {% endfor %}
 
 							</section>
