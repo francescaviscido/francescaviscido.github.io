@@ -91,7 +91,7 @@ Poi scrivi l’articolo normalmente in Markdown. Il post comparirà automaticame
 ## 5. Personalizzazione
 
 - Colori: `assets/css/style.css`, variabili all’inizio del file (`:root`)
-- Foto profilo: `assets/img/francesca-viscido.jpg`
+- Foto profilo circolare: `assets/img/francesca-viscido-circle.png`
 - Illustrazione hero: `assets/img/illustrazione-terapia.png`
 - Immagini blog: `assets/img/post-*.png`
 - Esperienza e formazione: `index.html`

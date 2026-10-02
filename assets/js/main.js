@@ -6,23 +6,34 @@
   const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
+  function closeMenu() {
+    if (!menuToggle || !siteNav) return;
+    siteNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    body.classList.remove('menu-open');
+  }
+
   if (menuToggle && siteNav) {
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav.classList.toggle('is-open');
-      body.classList.toggle('menu-open');
+    menuToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const willOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
+      menuToggle.setAttribute('aria-expanded', String(willOpen));
+      siteNav.classList.toggle('is-open', willOpen);
+      body.classList.toggle('menu-open', willOpen);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!siteNav.classList.contains('is-open')) return;
+      if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1040) closeMenu();
     });
   }
 
   document.querySelectorAll('.site-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (siteNav && siteNav.classList.contains('is-open')) {
-        siteNav.classList.remove('is-open');
-        menuToggle?.setAttribute('aria-expanded', 'false');
-        body.classList.remove('menu-open');
-      }
-    });
+    link.addEventListener('click', closeMenu);
   });
 
   if ('IntersectionObserver' in window) {
