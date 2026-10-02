@@ -23,7 +23,7 @@ permalink: /blog/
       {% for post in site.posts %}
       <article class="post-card reveal">
         <a class="post-image" href="{{ post.url | relative_url }}" aria-label="Leggi {{ post.title }}">
-          <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="" loading="lazy">
+          <img src="{{ post.image | default: '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
         </a>
         <div class="post-body">
           <div class="post-meta"><span>{{ post.category }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time></div>

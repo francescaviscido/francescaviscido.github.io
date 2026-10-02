@@ -94,3 +94,25 @@ Apri poi `http://localhost:4000`.
 ## Privacy
 
 Il template usa solo informazioni professionali selezionate dal CV. Prima della pubblicazione definitiva, rileggi comunque ogni testo e verifica che corrisponda alle informazioni che desideri rendere pubbliche.
+
+
+## Integrazioni aggiunte mantenendo lo stile originale
+
+Questa versione mantiene grafica, palette, font e struttura del template allegato e aggiunge:
+
+- foto profilo circolare nella parte sinistra della hero (`assets/img/francesca-viscido-profile.png`);
+- immagini diverse per i 4 articoli attuali;
+- immagine di ogni articolo configurabile direttamente dal front matter Markdown con `image` e `image_alt`;
+- banner e pannello **Gestisci consenso cookie**, con preferenze salvate localmente nel browser;
+- rimozione della frase introduttiva richiesta dalla sezione Esperienza.
+
+### Immagini dei post da Markdown
+
+Ogni file in `_posts/` può scegliere la propria copertina:
+
+```yaml
+image: "/assets/img/nome-immagine.webp"
+image_alt: "Descrizione accessibile dell'immagine"
+```
+
+La stessa immagine viene usata nella card del blog, nella home, nella pagina dell'articolo e nei metadati Open Graph. Se `image` non è presente, il sito usa automaticamente l'illustrazione principale come fallback.

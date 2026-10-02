@@ -3,6 +3,8 @@ layout: post
 title: "Cos’è la terapia cognitivo-comportamentale?"
 description: "Un’introduzione semplice al modello cognitivo-comportamentale e al modo in cui mette in relazione pensieri, emozioni, comportamenti e contesto."
 category: "Terapia CBT"
+image: "/assets/img/post-terapia-cognitivo-comportamentale.webp"
+image_alt: "Illustrazione di un colloquio terapeutico con simboli che collegano pensieri, emozioni e comportamenti."
 reading_time: "6 min"
 ---
 La **terapia cognitivo-comportamentale**, spesso indicata con la sigla CBT (dall’inglese *Cognitive Behavioral Therapy*), è un approccio psicoterapeutico che osserva in modo strutturato il rapporto tra ciò che pensiamo, ciò che proviamo, il modo in cui ci comportiamo e le situazioni che viviamo.

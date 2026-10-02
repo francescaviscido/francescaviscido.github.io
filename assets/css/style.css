@@ -264,3 +264,48 @@ button { cursor: pointer; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* Integrazioni richieste: foto profilo + gestione consenso. */
+.hero-profile { display: flex; align-items: center; margin-bottom: 22px; }
+.hero-profile-photo { display: block; width: 92px; height: 92px; flex: 0 0 92px; border-radius: 50%; padding: 5px; background: rgba(255,255,255,.72); border: 1px solid rgba(52,48,92,.12); box-shadow: 0 14px 34px rgba(52,48,92,.15); }
+.hero-profile-photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.footer-consent-button { border: 0; padding: 0; background: transparent; color: #c7c2d2; font: inherit; font-size: .86rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.footer-consent-button:hover { color: #fff; }
+.cookie-banner { position: fixed; z-index: 90; left: 18px; right: 18px; bottom: 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 24px; background: rgba(39,36,67,.97); color: #fff; box-shadow: 0 26px 70px rgba(39,36,67,.28); }
+.cookie-banner[hidden], .consent-modal[hidden] { display: none !important; }
+.cookie-banner-inner { width: min(1180px, calc(100% - 32px)); margin-inline: auto; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.cookie-banner strong { display: block; margin-bottom: 4px; }
+.cookie-banner p { margin: 0; max-width: 690px; color: #d8d3e3; font-size: .9rem; }
+.cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.cookie-banner .button { min-height: 44px; white-space: nowrap; }
+.cookie-button-ghost { color: #fff; border-color: rgba(255,255,255,.26); background: rgba(255,255,255,.06); }
+.cookie-button-ghost:hover { background: rgba(255,255,255,.12); }
+.consent-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 18px; }
+.consent-backdrop { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(31,28,52,.58); cursor: default; }
+.consent-panel { position: relative; width: min(100%, 680px); max-height: calc(100vh - 36px); overflow: auto; padding: 28px; border-radius: 28px; background: var(--cream); box-shadow: 0 30px 90px rgba(31,28,52,.32); }
+.consent-panel-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; }
+.consent-panel-head h2 { margin: 10px 0 0; color: var(--ink); font-family: Georgia, serif; font-size: 2.35rem; font-weight: 500; }
+.consent-close { flex: 0 0 42px; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.consent-intro { margin: 16px 0 20px; color: var(--muted); }
+.consent-options { display: grid; gap: 10px; }
+.consent-option { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; padding: 16px 17px; border: 1px solid rgba(52,48,92,.11); border-radius: 18px; background: #fff; }
+.consent-option span { display: grid; gap: 3px; }
+.consent-option strong { color: var(--ink); }
+.consent-option small { color: var(--muted); line-height: 1.45; }
+.consent-option input { width: 19px; height: 19px; margin: 3px 0 0; accent-color: var(--ink); }
+.consent-option.is-required { background: #f3e8e3; }
+.consent-panel-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; margin-top: 22px; }
+body.consent-open { overflow: hidden; }
+@media (max-width: 760px) {
+  .hero-profile { margin-bottom: 18px; }
+  .hero-profile-photo { width: 76px; height: 76px; flex-basis: 76px; }
+  .cookie-banner { left: 10px; right: 10px; bottom: 10px; border-radius: 20px; }
+  .cookie-banner-inner { width: auto; padding: 16px; align-items: stretch; flex-direction: column; }
+  .cookie-actions { justify-content: stretch; }
+  .cookie-actions .button { width: 100%; }
+  .consent-panel { padding: 22px; border-radius: 24px; }
+  .consent-panel-head h2 { font-size: 2rem; }
+  .consent-panel-actions { align-items: stretch; flex-direction: column; }
+  .consent-panel-actions .button { width: 100%; }
+}

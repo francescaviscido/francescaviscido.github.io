@@ -3,6 +3,8 @@ layout: post
 title: "Pensieri, emozioni e comportamenti: leggere il ciclo che si attiva"
 description: "Un modo pratico per comprendere come le interpretazioni di una situazione possano influenzare emozioni e comportamenti, e viceversa."
 category: "Consapevolezza"
+image: "/assets/img/post-pensieri-emozioni-comportamenti.webp"
+image_alt: "Illustrazione del ciclo tra pensieri, emozioni e comportamenti in uno spazio di riflessione."
 reading_time: "5 min"
 ---
 Quando qualcosa ci mette in difficoltà, la sensazione può essere quella di trovarsi dentro un unico blocco: “sto male e basta”. Una delle prime operazioni utili nel lavoro cognitivo-comportamentale è invece **separare gli elementi dell’esperienza**, così da poterli osservare con maggiore chiarezza.

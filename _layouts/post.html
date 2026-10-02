@@ -17,7 +17,7 @@ layout: default
     </header>
 
     <figure class="article-cover">
-      <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="Illustrazione di un colloquio terapeutico, con una persona che annaffia una piccola pianta">
+      <img src="{{ page.image | default: '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
     </figure>
 
     <div class="article-content prose">

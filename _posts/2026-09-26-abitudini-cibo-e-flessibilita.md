@@ -3,6 +3,8 @@ layout: post
 title: "Rapporto con il cibo: osservare regole, abitudini e flessibilità"
 description: "Uno sguardo cognitivo-comportamentale su regole rigide, pensieri automatici e contesto nel rapporto quotidiano con l’alimentazione."
 category: "Alimentazione"
+image: "/assets/img/post-cibo-flessibilita.webp"
+image_alt: "Illustrazione dedicata al rapporto con il cibo, alla consapevolezza e alla flessibilità psicologica."
 reading_time: "6 min"
 ---
 Il rapporto con il cibo non riguarda soltanto ciò che mangiamo. Può includere regole, emozioni, convinzioni sul corpo, abitudini familiari, esperienze sociali e strategie che utilizziamo per gestire momenti difficili.

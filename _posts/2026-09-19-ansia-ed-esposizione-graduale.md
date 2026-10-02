@@ -3,6 +3,8 @@ layout: post
 title: "Ansia ed esposizione graduale: perché evitare può alimentare la paura"
 description: "L’esposizione è uno strumento della terapia cognitivo-comportamentale. Vediamo, a livello divulgativo, perché viene costruita in modo graduale e condiviso."
 category: "Ansia"
+image: "/assets/img/post-ansia-esposizione-graduale.webp"
+image_alt: "Illustrazione simbolica di un percorso graduale per affrontare l’ansia, passo dopo passo."
 reading_time: "6 min"
 ---
 Quando qualcosa ci spaventa, evitare è una reazione comprensibile. Nel breve periodo l’evitamento porta spesso sollievo: l’ansia scende e ci sentiamo di nuovo al sicuro. Proprio questo sollievo, però, può rendere l’evitamento sempre più probabile in futuro.

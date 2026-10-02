@@ -78,3 +78,41 @@
     });
   }
 })();
+
+
+// Gestione consenso cookie / preferenze locali.
+(() => {
+  const storageKey = 'francesca_viscido_cookie_consent_v1';
+  const banner = document.getElementById('cookie-banner');
+  const modal = document.getElementById('consent-modal');
+  const preferences = document.getElementById('consent-preferences');
+  const analytics = document.getElementById('consent-analytics');
+  const marketing = document.getElementById('consent-marketing');
+  if (!banner || !modal) return;
+  const readConsent = () => { try { return JSON.parse(localStorage.getItem(storageKey)); } catch (_) { return null; } };
+  const applyState = (state) => {
+    if (!state) return;
+    if (preferences) preferences.checked = !!state.preferences;
+    if (analytics) analytics.checked = !!state.analytics;
+    if (marketing) marketing.checked = !!state.marketing;
+  };
+  const closeModal = () => {
+    modal.hidden = true; modal.setAttribute('aria-hidden','true'); document.body.classList.remove('consent-open');
+  };
+  const openModal = () => {
+    applyState(readConsent()); modal.hidden = false; modal.setAttribute('aria-hidden','false'); document.body.classList.add('consent-open'); modal.querySelector('.consent-close')?.focus();
+  };
+  const saveConsent = (state) => {
+    localStorage.setItem(storageKey, JSON.stringify({ necessary:true, preferences:!!state.preferences, analytics:!!state.analytics, marketing:!!state.marketing, updated_at:new Date().toISOString() }));
+    banner.hidden = true; closeModal();
+  };
+  const current = readConsent(); if (current) applyState(current); else banner.hidden = false;
+  document.getElementById('cookie-accept')?.addEventListener('click', () => saveConsent({preferences:true,analytics:true,marketing:true}));
+  document.getElementById('cookie-reject')?.addEventListener('click', () => saveConsent({preferences:false,analytics:false,marketing:false}));
+  document.getElementById('cookie-manage')?.addEventListener('click', openModal);
+  document.getElementById('footer-consent-button')?.addEventListener('click', openModal);
+  document.getElementById('consent-save')?.addEventListener('click', () => saveConsent({preferences:preferences?.checked,analytics:analytics?.checked,marketing:marketing?.checked}));
+  document.getElementById('consent-accept-all')?.addEventListener('click', () => saveConsent({preferences:true,analytics:true,marketing:true}));
+  modal.querySelectorAll('[data-consent-close]').forEach(el => el.addEventListener('click', closeModal));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !modal.hidden) closeModal(); });
+})();

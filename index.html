@@ -8,6 +8,11 @@ description: "Francesca Viscido, psicologa e psicoterapeuta a indirizzo cognitiv
   <div class="hero-ink hero-ink-two" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy reveal">
+      <div class="hero-profile">
+        <span class="hero-profile-photo">
+          <img src="{{ '/assets/img/francesca-viscido-profile.png' | relative_url }}" alt="Ritratto di Francesca Viscido">
+        </span>
+      </div>
       <div class="eyebrow">Psicologia · Psicoterapia · Benessere</div>
       <h1>Uno spazio per comprendere, cambiare e ritrovare equilibrio.</h1>
       <p class="hero-intro">Sono <strong>Francesca Viscido</strong>, psicologa e psicoterapeuta a indirizzo cognitivo-comportamentale. Il mio lavoro integra ascolto, metodo e strumenti concreti per accompagnare percorsi di consapevolezza e cambiamento.</p>
@@ -57,7 +62,6 @@ description: "Francesca Viscido, psicologa e psicoterapeuta a indirizzo cognitiv
         <span class="eyebrow">Esperienza professionale</span>
         <h2>Clinica, organizzazioni e ricerca.</h2>
       </div>
-      <p>Una selezione delle esperienze professionali riportate nel curriculum, senza recapiti personali o altri dati sensibili.</p>
     </div>
 
     <div class="timeline">
@@ -122,7 +126,7 @@ description: "Francesca Viscido, psicologa e psicoterapeuta a indirizzo cognitiv
       {% for post in site.posts limit:3 %}
       <article class="post-card reveal">
         <a class="post-image" href="{{ post.url | relative_url }}" aria-label="Leggi {{ post.title }}">
-          <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="" loading="lazy">
+          <img src="{{ post.image | default: '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
         </a>
         <div class="post-body">
           <div class="post-meta"><span>{{ post.category }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time></div>
