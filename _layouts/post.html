@@ -1,29 +1,39 @@
 ---
 layout: default
 ---
-<article class="post-layout">
-  <section class="post-hero">
-    <div class="container post-hero-grid">
-      <div>
-        <a class="eyebrow-link" href="{{ '/blog/' | relative_url }}">← Torna al blog</a>
-        <span class="eyebrow">{{ page.category }}</span>
-        <h1>{{ page.title }}</h1>
-        <p class="post-lead">{{ page.description }}</p>
-        <div class="post-meta-line">
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>
-          {% if page.reading_time %}<span>{{ page.reading_time }}</span>{% endif %}
-        </div>
+<article class="article-shell">
+  <div class="container article-container">
+    <a class="back-link" href="{{ '/blog/' | relative_url }}">← Torna al blog</a>
+
+    <header class="article-header">
+      <div class="eyebrow">{{ page.category | default: 'Psicologia' }}</div>
+      <h1>{{ page.title }}</h1>
+      <p class="article-lead">{{ page.description }}</p>
+      <div class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>
+        <span aria-hidden="true">·</span>
+        <span>{{ page.reading_time | default: '5 min' }} di lettura</span>
       </div>
-      {% if page.image %}
-      <div class="post-hero-image">
-        <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
-      </div>
-      {% endif %}
-    </div>
-  </section>
-  <section class="section post-content-wrap">
-    <div class="container post-content">
+    </header>
+
+    <figure class="article-cover">
+      <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="Illustrazione di un colloquio terapeutico, con una persona che annaffia una piccola pianta">
+    </figure>
+
+    <div class="article-content prose">
       {{ content }}
     </div>
-  </section>
+
+    <aside class="article-disclaimer" aria-label="Nota informativa">
+      <strong>Nota:</strong> questo articolo ha finalità divulgative e non sostituisce una valutazione o un percorso psicoterapeutico personalizzato.
+    </aside>
+
+    <div class="article-cta">
+      <div>
+        <span class="eyebrow">Un primo contatto</span>
+        <h2>Vuoi approfondire in uno spazio dedicato?</h2>
+      </div>
+      <a class="button button-primary" href="{{ '/' | relative_url }}#contatti">Scrivimi</a>
+    </div>
+  </div>
 </article>

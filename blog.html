@@ -12,7 +12,7 @@ permalink: /blog/
       <p>Uno spazio divulgativo dedicato alla terapia cognitivo-comportamentale: concetti, strumenti e domande utili per avvicinarsi alla psicologia in modo chiaro e consapevole.</p>
     </div>
     <div class="blog-mini-art reveal">
-      <img src="{{ '/assets/img/illustrazione-terapia.png' | relative_url }}" alt="Illustrazione di un colloquio terapeutico">
+      <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="Illustrazione di un colloquio terapeutico">
     </div>
   </div>
 </section>
@@ -23,7 +23,7 @@ permalink: /blog/
       {% for post in site.posts %}
       <article class="post-card reveal">
         <a class="post-image" href="{{ post.url | relative_url }}" aria-label="Leggi {{ post.title }}">
-          <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
+          <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="" loading="lazy">
         </a>
         <div class="post-body">
           <div class="post-meta"><span>{{ post.category }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time></div>
