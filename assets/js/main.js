@@ -1,60 +1,52 @@
-(() => {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.site-nav');
+(function () {
+  const body = document.body;
+  const menuToggle = document.querySelector('.menu-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const reveals = document.querySelectorAll('.reveal');
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('is-open', !open);
-      document.body.classList.toggle('menu-open', !open);
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav.classList.toggle('is-open');
+      body.classList.toggle('menu-open');
     });
-
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      toggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('is-open');
-      document.body.classList.remove('menu-open');
-    }));
   }
 
-  document.querySelectorAll('[data-year]').forEach(el => {
-    el.textContent = new Date().getFullYear();
+  document.querySelectorAll('.site-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (siteNav && siteNav.classList.contains('is-open')) {
+        siteNav.classList.remove('is-open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        body.classList.remove('menu-open');
+      }
+    });
   });
 
-  const revealItems = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver((entries, obs) => {
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
-    revealItems.forEach(item => observer.observe(item));
+    }, { threshold: 0.14 });
+    reveals.forEach(item => observer.observe(item));
   } else {
-    revealItems.forEach(item => item.classList.add('is-visible'));
+    reveals.forEach(item => item.classList.add('is-visible'));
   }
 
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-
-  if (form && status) {
-    form.addEventListener('submit', async (event) => {
-      const key = form.querySelector('input[name="access_key"]')?.value;
-      if (!key || key === 'YOUR_ACCESS_KEY_HERE') {
-        event.preventDefault();
-        status.textContent = 'Il modulo non è ancora attivo: inserisci la tua Access Key Web3Forms nel file _config.yml.';
-        status.className = 'form-status is-error';
-        return;
-      }
-
+  if (form) {
+    form.addEventListener('submit', async function (event) {
       event.preventDefault();
-      const button = form.querySelector('button[type="submit"]');
-      const original = button.textContent;
-      button.disabled = true;
-      button.textContent = 'Invio in corso…';
-      status.textContent = '';
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Invio in corso...';
+      if (formStatus) formStatus.textContent = 'Invio del messaggio in corso...';
 
       try {
         const response = await fetch(form.action, {
@@ -63,18 +55,100 @@
           headers: { Accept: 'application/json' }
         });
         const data = await response.json();
-        if (!response.ok || !data.success) throw new Error(data.message || 'Invio non riuscito');
-
-        form.reset();
-        status.textContent = 'Grazie. Il messaggio è stato inviato correttamente.';
-        status.className = 'form-status is-success';
+        if (response.ok && data.success) {
+          form.reset();
+          if (formStatus) formStatus.textContent = 'Messaggio inviato correttamente. Ti risponderò appena possibile.';
+        } else {
+          throw new Error(data.message || 'Errore durante l\'invio.');
+        }
       } catch (error) {
-        status.textContent = 'Non è stato possibile inviare il messaggio. Riprova tra poco.';
-        status.className = 'form-status is-error';
+        if (formStatus) formStatus.textContent = 'Non è stato possibile inviare il messaggio. Verifica la Web3Forms Access Key e riprova.';
       } finally {
-        button.disabled = false;
-        button.textContent = original;
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
       }
     });
   }
+
+  const STORAGE_KEY = 'fv_cookie_consent_v1';
+  const banner = document.getElementById('cookie-banner');
+  const modal = document.getElementById('consent-modal');
+  const manageButton = document.getElementById('cookie-manage');
+  const acceptAllButton = document.getElementById('cookie-accept-all');
+  const rejectAllButton = document.getElementById('cookie-reject-all');
+  const openPreferencesButton = document.getElementById('open-consent-preferences');
+  const saveSelectedButton = document.getElementById('consent-save-selected');
+  const acceptSelectedButton = document.getElementById('consent-accept-selected');
+  const preferencesInput = document.getElementById('consent-preferences');
+  const analyticsInput = document.getElementById('consent-analytics');
+  const marketingInput = document.getElementById('consent-marketing');
+
+  function getStoredConsent() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function setStoredConsent(value) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      ...value,
+      necessary: true,
+      timestamp: new Date().toISOString()
+    }));
+  }
+
+  function applyConsentToForm(consent) {
+    if (!consent) return;
+    preferencesInput.checked = !!consent.preferences;
+    analyticsInput.checked = !!consent.analytics;
+    marketingInput.checked = !!consent.marketing;
+  }
+
+  function openConsentModal() {
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    body.classList.add('modal-open');
+  }
+
+  function closeConsentModal() {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    body.classList.remove('modal-open');
+  }
+
+  function hideBanner() {
+    if (banner) banner.hidden = true;
+  }
+
+  function showBannerIfNeeded() {
+    const consent = getStoredConsent();
+    if (!consent && banner) banner.hidden = false;
+    if (consent) applyConsentToForm(consent);
+  }
+
+  function saveConsent(consent) {
+    setStoredConsent(consent);
+    applyConsentToForm(consent);
+    hideBanner();
+    closeConsentModal();
+  }
+
+  showBannerIfNeeded();
+
+  manageButton?.addEventListener('click', openConsentModal);
+  openPreferencesButton?.addEventListener('click', openConsentModal);
+  acceptAllButton?.addEventListener('click', () => saveConsent({ preferences: true, analytics: true, marketing: true }));
+  rejectAllButton?.addEventListener('click', () => saveConsent({ preferences: false, analytics: false, marketing: false }));
+  saveSelectedButton?.addEventListener('click', () => saveConsent({ preferences: preferencesInput.checked, analytics: analyticsInput.checked, marketing: marketingInput.checked }));
+  acceptSelectedButton?.addEventListener('click', () => saveConsent({ preferences: true, analytics: analyticsInput.checked, marketing: marketingInput.checked }));
+
+  modal?.querySelectorAll('[data-close-consent]').forEach(button => {
+    button.addEventListener('click', closeConsentModal);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal && !modal.hidden) closeConsentModal();
+  });
 })();

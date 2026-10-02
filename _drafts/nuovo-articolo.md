@@ -1,24 +1,10 @@
 ---
 layout: post
 title: "Titolo del nuovo articolo"
-description: "Una descrizione breve, 140–180 caratteri circa, che verrà mostrata nelle card del blog e nei metadati."
+description: "Breve descrizione dell'articolo"
 category: "Categoria"
 reading_time: "5 min"
+image: "/assets/img/nome-immagine.png"
+image_alt: "Descrizione dell'immagine"
 ---
-Scrivi qui l’introduzione del nuovo articolo.
-
-## Primo sottotitolo
-
-Testo del paragrafo.
-
-## Secondo sottotitolo
-
-Puoi usare **grassetto**, *corsivo*, elenchi e link Markdown.
-
-- Primo punto
-- Secondo punto
-- Terzo punto
-
-## Conclusione
-
-Chiudi con un riepilogo chiaro e senza promesse terapeutiche generiche.
+Scrivi qui il contenuto del tuo nuovo articolo in Markdown.

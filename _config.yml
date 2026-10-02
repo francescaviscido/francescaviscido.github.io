@@ -1,22 +1,18 @@
-title: "Francesca Viscido | Psicologa e Psicoterapeuta"
-description: "Sito professionale di Francesca Viscido, psicologa e psicoterapeuta a indirizzo cognitivo-comportamentale."
+title: "Francesca Viscido"
+description: "Psicologa e psicoterapeuta a indirizzo cognitivo-comportamentale. Sito personale e blog divulgativo."
 lang: it
 url: ""
 baseurl: ""
-permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
-future: false
-
-# Web3Forms: crea gratuitamente una chiave su https://web3forms.com/
-# e sostituisci il valore qui sotto. La chiave è pensata per essere usata lato client.
+permalink: /blog/:title/
 web3forms_access_key: "YOUR_ACCESS_KEY_HERE"
-
-# Dati mostrati nel sito. Evitiamo volutamente telefono, indirizzo e altri dati personali.
-professional_name: "Francesca Viscido"
-professional_title: "Psicologa e Psicoterapeuta"
-professional_focus: "Indirizzo cognitivo-comportamentale"
-
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
+email_display: "Compila il modulo per essere ricontattato/a"
+collections:
+  posts:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -6,9 +6,12 @@ Template statico pronto per GitHub Pages, costruito con **Jekyll** per poter pub
 
 - Home responsive con profilo, esperienza, formazione e contatti
 - Palette e immagine coordinate all’illustrazione fornita
+- Foto profilo nella hero con crop circolare
 - Blog Jekyll con 4 articoli di esempio in Markdown
+- Immagini dedicate per ciascun articolo del blog
 - Template per nuovi articoli in `_drafts/nuovo-articolo.md`
 - Modulo contatti tramite Web3Forms
+- Banner e pannello **Gestisci consenso cookie**
 - Menu mobile, animazioni leggere e accessibilità di base
 - Nessun numero di telefono, indirizzo di residenza/domicilio o altro dato sensibile del CV pubblicato nel sito
 
@@ -42,9 +45,20 @@ web3forms_access_key: "YOUR_ACCESS_KEY_HERE"
 
 con la chiave ricevuta.
 
-Non devi pubblicare nel sito il tuo indirizzo email: Web3Forms recapita i messaggi all’indirizzo associato alla chiave.
+Il form usa JavaScript per mostrare un messaggio di conferma senza ricaricare la pagina.
 
-## 3. Pubblicare una nuova news / articolo Markdown
+## 3. Gestione consenso cookie
+
+Il sito include:
+
+- banner iniziale di consenso;
+- pulsanti **Accetta tutti**, **Rifiuta facoltativi** e **Gestisci**;
+- finestra per scegliere preferenze, statistiche e marketing;
+- salvataggio delle scelte in `localStorage`.
+
+Se in futuro aggiungerai Google Analytics, Meta Pixel o altri script esterni, potrai usarli leggendo le preferenze salvate nel browser.
+
+## 4. Pubblicare una nuova news / articolo Markdown
 
 Duplica `_drafts/nuovo-articolo.md` nella cartella `_posts/` e rinomina il file in:
 
@@ -67,25 +81,28 @@ title: "Titolo"
 description: "Breve descrizione"
 category: "Categoria"
 reading_time: "5 min"
+image: "/assets/img/nome-immagine.png"
+image_alt: "Descrizione dell'immagine"
 ---
 ```
 
 Poi scrivi l’articolo normalmente in Markdown. Il post comparirà automaticamente nella pagina Blog e, se è tra i tre più recenti, anche nella home.
 
-## 4. Personalizzazione
+## 5. Personalizzazione
 
 - Colori: `assets/css/style.css`, variabili all’inizio del file (`:root`)
-- Immagine principale: `assets/img/illustrazione-terapia.webp`
+- Foto profilo: `assets/img/francesca-viscido.jpg`
+- Illustrazione hero: `assets/img/illustrazione-terapia.png`
+- Immagini blog: `assets/img/post-*.png`
 - Esperienza e formazione: `index.html`
 - Titolo e metadati: `_config.yml`
 - Layout articoli: `_layouts/post.html`
 
-## 5. Anteprima locale (facoltativa)
+## 6. Anteprima locale (facoltativa)
 
 Se hai Ruby installato:
 
 ```bash
-bundle install
 bundle exec jekyll serve
 ```
 
