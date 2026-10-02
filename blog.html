@@ -1,0 +1,38 @@
+---
+layout: default
+title: "Blog"
+description: "Articoli divulgativi sulla terapia cognitivo-comportamentale e sui processi di cambiamento."
+permalink: /blog/
+---
+<section class="blog-hero">
+  <div class="container blog-hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Blog</span>
+      <h1>Comprendere i meccanismi del cambiamento.</h1>
+      <p>Uno spazio divulgativo dedicato alla terapia cognitivo-comportamentale: concetti, strumenti e domande utili per avvicinarsi alla psicologia in modo chiaro e consapevole.</p>
+    </div>
+    <div class="blog-mini-art reveal">
+      <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="Illustrazione di un colloquio terapeutico">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="posts-grid posts-grid-full">
+      {% for post in site.posts %}
+      <article class="post-card reveal">
+        <a class="post-image" href="{{ post.url | relative_url }}" aria-label="Leggi {{ post.title }}">
+          <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="" loading="lazy">
+        </a>
+        <div class="post-body">
+          <div class="post-meta"><span>{{ post.category }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time></div>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.description }}</p>
+          <a class="text-link" href="{{ post.url | relative_url }}">Leggi l’articolo →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

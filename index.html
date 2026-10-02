@@ -1,165 +1,187 @@
 ---
-layout: null
-title: francescaviscido.github.io - Home Page 
-description: Pagina personale della Dott.ssa Francesca Viscido
-sitemap:
-    priority: 1.0
-    lastmod: 2022-05-13
-    changefreq: weekly
+layout: default
+title: ""
+description: "Francesca Viscido, psicologa e psicoterapeuta a indirizzo cognitivo-comportamentale. Esperienza clinica, psicologia del lavoro e disturbi della nutrizione e dell'alimentazione."
 ---
-<!DOCTYPE HTML>
+<section class="hero">
+  <div class="hero-ink hero-ink-one" aria-hidden="true"></div>
+  <div class="hero-ink hero-ink-two" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">Psicologia · Psicoterapia · Benessere</div>
+      <h1>Uno spazio per comprendere, cambiare e ritrovare equilibrio.</h1>
+      <p class="hero-intro">Sono <strong>Francesca Viscido</strong>, psicologa e psicoterapeuta a indirizzo cognitivo-comportamentale. Il mio lavoro integra ascolto, metodo e strumenti concreti per accompagnare percorsi di consapevolezza e cambiamento.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#contatti">Richiedi un primo contatto</a>
+        <a class="button button-ghost" href="#profilo">Scopri il mio percorso</a>
+      </div>
+      <div class="hero-pills" aria-label="Aree professionali">
+        <span>Psicoterapia CBT</span>
+        <span>Psicologia del lavoro</span>
+        <span>Nutrizione e alimentazione</span>
+      </div>
+    </div>
 
-<html>
-	<head>
-	<!-- Scripts -->
-	{% include scripts-main.html %}
-    {% include tracking.html %}
-	{% include head.html %}
-	
-    
-	
+    <div class="hero-art reveal" aria-label="Illustrazione di un colloquio terapeutico">
+      <div class="art-frame">
+        <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="Una terapeuta annaffia simbolicamente una piccola pianta durante un colloquio">
+      </div>
+      <div class="art-caption">“Piccoli passi, osservati con cura, possono aprire nuove possibilità.”</div>
+    </div>
+  </div>
+</section>
 
+<section class="section section-soft" id="profilo">
+  <div class="container split-grid">
+    <div class="section-kicker reveal">
+      <span class="eyebrow">Profilo</span>
+      <h2>Un approccio strutturato, collaborativo e centrato sulla persona.</h2>
+    </div>
+    <div class="section-copy reveal">
+      <p>Sono iscritta all’Albo degli Psicologi della Regione Campania e annotata all’Albo degli Psicoterapeuti. Ho completato la specializzazione in psicoterapia cognitivo-comportamentale e, nel tempo, ho maturato esperienze in ambito clinico, organizzativo e di ricerca.</p>
+      <p>La mia esperienza comprende il lavoro in studio privato, strutture residenziali e servizi sanitari, oltre a progetti di psicologia del lavoro e Human Resources. Un’area di particolare interesse professionale riguarda i disturbi della nutrizione e dell’alimentazione.</p>
 
-	</head>
-	<body class="is-loading">
+      <div class="values-grid">
+        <div class="value-card"><span>01</span><strong>Ascolto</strong><p>Comprendere il significato dell’esperienza prima di costruire obiettivi condivisi.</p></div>
+        <div class="value-card"><span>02</span><strong>Metodo</strong><p>Strumenti basati sul modello cognitivo-comportamentale, adattati alla persona.</p></div>
+        <div class="value-card"><span>03</span><strong>Autonomia</strong><p>Favorire competenze utili anche oltre lo spazio della seduta.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-			
+<section class="section" id="esperienza">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div>
+        <span class="eyebrow">Esperienza professionale</span>
+        <h2>Clinica, organizzazioni e ricerca.</h2>
+      </div>
+      <p>Una selezione delle esperienze professionali riportate nel curriculum, senza recapiti personali o altri dati sensibili.</p>
+    </div>
 
-				<!-- Intro -->
-					<div id="intro">
-            			<h1>{{site.title}}</h1>
-						<h2>Psicologa e pscicoterapeuta</h2>
-					<!--	<p> Benvenuto! </p>-->
-						<div id="stepone" style="margin-bottom: 40px;"> </div>
-						<!--<img id="foot" style="width:50px; opacity: 0.0; margin-bottom: 20px;" src="{{ "/images/footprint.png" | absolute_url }}" alt="" />
-						-->
-						<ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-				
-					<script>
-					
-						var app = document.getElementById('stepone');
-	
-						var typewriter = new Typewriter(app, {
-							loop: false
-						});
-	
-						typewriter.typeString('Benvenuto! Nella mia pagina personale.')
-							.pauseFor(1000)
-							.deleteAll()
-						    .typeString('Arrivando fino a qui!  ')
-							.pauseFor(400)
-							.typeString('Hai fatto il primo passo ...')
-							.pauseFor(1500)
-							.deleteAll()
-							.typeString('Quindi è arrivato il momento di andare avanti e fare il secondo passo.')
-							.start();
-							/*function doSomething() {
-								
-								if ($('#stepone').html().includes("secondo.")){
-									$('#foot').css('opacity', 1.0);
-									return;
-								}
+    <div class="timeline">
+      <article class="timeline-item reveal">
+        <div class="timeline-date">2018 — oggi</div>
+        <div class="timeline-card"><h3>Psicologa e Psicoterapeuta · Studio privato</h3><p>Attività clinica in ambito psicologico e psicoterapeutico.</p><span class="tag">Attività clinica</span></div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-date">2024 — oggi</div>
+        <div class="timeline-card"><h3>Psicologa e Psicoterapeuta · RSA / SPS di Bisaccia</h3><p>Attività professionale in struttura residenziale.</p><span class="tag">Psicoterapia</span></div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-date">2024 — oggi</div>
+        <div class="timeline-card"><h3>Psicologa e Psicoterapeuta · SUAP SPS</h3><p>Attività psicologica e coordinamento di reparto presso una speciale unità di accoglienza permanente.</p><span class="tag">Coordinamento</span></div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-date">2022 — oggi</div>
+        <div class="timeline-card"><h3>Psicologa · Cooperativa sociale IL SORRISO</h3><p>Interventi domiciliari in collaborazione con servizi sanitari, con esperienza nell’area dei disturbi dell’alimentazione e delle patologie oncologiche.</p><span class="tag">Territorio</span></div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-date">2019 — 2025</div>
+        <div class="timeline-card"><h3>Psicologa del lavoro &amp; HR · FMTS Group</h3><p>Esperienza nella psicologia del lavoro e nei processi Human Resources.</p><span class="tag">Organizzazioni</span></div>
+      </article>
+      <article class="timeline-item reveal">
+        <div class="timeline-date">2016 — 2022</div>
+        <div class="timeline-card"><h3>Esperienze cliniche, ricerca e HR</h3><p>Tirocini ed esperienze presso Dipartimento di Salute Mentale ASL Avellino, Villa dei Pini, INAIL, Orienta e Mondo Convenienza.</p><span class="tag">Formazione sul campo</span></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-								if($('#foot').css('opacity') == 0.0){
-									$('#foot').css('opacity', 1.0);
-									//$('#foot').fadeIn();
-								} else{
-									//$('#foot').fadeOut();
-									$('#foot').css('opacity', 0.0);
-								}
-								setTimeout(doSomething, 800);
-								
-							}
+<section class="section section-deep" id="formazione">
+  <div class="container">
+    <div class="section-heading light reveal">
+      <div>
+        <span class="eyebrow">Formazione</span>
+        <h2>Competenze costruite nel tempo.</h2>
+      </div>
+      <p>Un percorso che unisce psicologia, psicoterapia cognitivo-comportamentale e formazione specialistica.</p>
+    </div>
 
-							setTimeout(doSomething, 4500);*/
-						
-					</script>
-				<!-- Header -->
-					<header id="header">
-						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
-					</header>
+    <div class="education-grid">
+      <article class="education-card reveal"><span class="education-year">2022</span><h3>Specializzazione in Psicoterapia Cognitivo-Comportamentale</h3><p>Istituto Skinner Roma/Napoli.</p></article>
+      <article class="education-card reveal"><span class="education-year">2021</span><h3>Tecnico ABA</h3><p>Istituto Walden Roma.</p></article>
+      <article class="education-card reveal"><span class="education-year">2016</span><h3>Laurea Magistrale in Psicologia</h3><p>Università Europea di Roma.</p></article>
+      <article class="education-card reveal"><span class="education-year">2014</span><h3>Laurea Triennale in Scienze e Tecniche Psicologiche</h3><p>Università Europea di Roma.</p></article>
+    </div>
+  </div>
+</section>
 
-				<!-- Nav -->
-					<nav id="nav">
+<section class="section" id="blog-preview">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div>
+        <span class="eyebrow">Blog</span>
+        <h2>Psicologia spiegata con parole accessibili.</h2>
+      </div>
+      <p>Articoli divulgativi sulla terapia cognitivo-comportamentale, sui processi di cambiamento e sulle strategie che possono aiutare a leggere meglio ciò che accade dentro e intorno a noi.</p>
+    </div>
 
-            {% include nav.html %}
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card reveal">
+        <a class="post-image" href="{{ post.url | relative_url }}" aria-label="Leggi {{ post.title }}">
+          <img src="{{ '/assets/img/illustrazione-terapia.webp' | relative_url }}" alt="" loading="lazy">
+        </a>
+        <div class="post-body">
+          <div class="post-meta"><span>{{ post.category }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time></div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.description }}</p>
+          <a class="text-link" href="{{ post.url | relative_url }}">Leggi l’articolo →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="center-action reveal"><a class="button button-ghost" href="{{ '/blog/' | relative_url }}">Tutti gli articoli</a></div>
+  </div>
+</section>
 
-					</nav>
+<section class="section contact-section" id="contatti">
+  <div class="container contact-grid">
+    <div class="contact-copy reveal">
+      <span class="eyebrow">Contatti</span>
+      <h2>Puoi scrivermi da qui.</h2>
+      <p>Usa il modulo per richiedere informazioni o un primo contatto. Per tutelare la privacy, il sito non pubblica numero di telefono, indirizzo di residenza o altri dati personali presenti nel curriculum.</p>
+      <div class="contact-note">
+        <strong>Importante</strong>
+        <p>Il modulo non è un canale di emergenza. In caso di urgenza o pericolo immediato, rivolgiti ai servizi di emergenza del territorio.</p>
+      </div>
+    </div>
 
-				<!-- Main -->
-					<div id="main">
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2 >Possiamo scoprire insieme la tua prossima scelta!</h2>
-									<br>
-									<span style="font-style: italic;">Il mio metodo si basa sull'empatia tra paziente e terapeuta.</span>
-									
-									<br>
-									Scopri nella sezione <a href="/chisono">Chi Sono</a> il mio cammino professionale.
-								
-								</header>
-								<a href="#" class="image main"><img src="{{ "/images/bg03.jpg" | absolute_url }}" alt="" /></a>
-								<h3>In breve su di me</h3>
-								<p>Sono una psicologa e pscicoterapeuta ad orientamento <a href="">Cognitivo Comportamentale</a>, esperta nel 
-				trattamento del disturbo d'ansia, .......</p>
-                <p>Mi occupo di terapia individuale, di coppia, e familiare. Ricevo presso la città di Avellino, ne pressi della 
-					clinica Malzoni, viale Platani, e nella città di Battipaglia. Inoltre, è possibile richiedere 
-				sessioni di terapia online.</p>
-			 	<button onclick="scrollToAnchor('footer')" type="button" >Richiedi un appuntamento</button>
+    <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
+      <input type="hidden" name="subject" value="Nuovo contatto dal sito di Francesca Viscido">
+      <input type="hidden" name="from_name" value="Sito Francesca Viscido">
+      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+      <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
 
-							</article>
-
-						<!-- Posts -->
-						<h3>Articoli recenti del mio blog</h3>
-							<section class="posts">
-								
-                {% for post in site.posts limit:2 %}
-                <!-- {% assign mod3 = forloop.index | modulo: 3 %} -->
-  								<article>
-  									<header>
-  										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-  									</header>
-  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-  									<p>{{ post.excerpt }}</p>
-  									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">leggi l'articolo</a></li>
-  									</ul>
-  								</article>
-                  <!-- {% if mod3 == 0 %}
-                  <article>
-  									<header>
-  										<h2><a href="#">Sponsored</a></h2>
-  									</header>
-
-  								</article>
-                  {% endif %} -->
-                {% endfor %}
-
-							</section>
-
-						
-							<footer>
-							<ul class="actions">
-							<li><a href="{{ "/blog/" | absolute_url }}" class="button">Visita il mio Blog</a></li>
-							</ul>
-							</footer>
-
-					</div>
-
-				<!-- Footer -->
-        {% include foot.html %}
-
-			</div>
-
-		
-
-	</body>
-</html>
+      <div class="form-row two-cols">
+        <label>Nome
+          <input type="text" name="name" autocomplete="name" required placeholder="Il tuo nome">
+        </label>
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required placeholder="nome@email.it">
+        </label>
+      </div>
+      <label>Oggetto
+        <select name="motivo" required>
+          <option value="" selected disabled>Seleziona un motivo</option>
+          <option>Richiesta informazioni</option>
+          <option>Primo contatto</option>
+          <option>Collaborazione professionale</option>
+          <option>Altro</option>
+        </select>
+      </label>
+      <label>Messaggio
+        <textarea name="message" rows="6" required placeholder="Scrivi qui il tuo messaggio. Evita di inserire dati sanitari o informazioni sensibili non necessarie."></textarea>
+      </label>
+      <label class="consent-row">
+        <input type="checkbox" name="privacy_acknowledged" value="si" required>
+        <span>Confermo di aver inserito solo le informazioni necessarie per essere ricontattato/a.</span>
+      </label>
+      <button class="button button-primary button-full" type="submit">Invia il messaggio</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

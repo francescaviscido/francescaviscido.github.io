@@ -1,0 +1,23 @@
+<header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Home — {{ site.professional_name }}">
+      <span class="brand-mark" aria-hidden="true">FV</span>
+      <span class="brand-copy">
+        <strong>{{ site.professional_name }}</strong>
+        <small>{{ site.professional_title }}</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Apri il menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Navigazione principale">
+      <a href="{{ '/' | relative_url }}#profilo">Profilo</a>
+      <a href="{{ '/' | relative_url }}#esperienza">Esperienza</a>
+      <a href="{{ '/' | relative_url }}#formazione">Formazione</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a class="nav-cta" href="{{ '/' | relative_url }}#contatti">Contatti</a>
+    </nav>
+  </div>
+</header>
