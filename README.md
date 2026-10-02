@@ -6,7 +6,7 @@ Template statico pronto per GitHub Pages, costruito con **Jekyll** per poter pub
 
 - Home responsive con profilo, esperienza, formazione e contatti
 - Palette e immagine coordinate all’illustrazione fornita
-- Foto profilo nella hero con crop circolare
+- Foto profilo nella hero con crop circolare, integrata nello stile grafico originale del template
 - Blog Jekyll con 4 articoli di esempio in Markdown
 - Immagini dedicate per ciascun articolo del blog
 - Template per nuovi articoli in `_drafts/nuovo-articolo.md`
